@@ -598,7 +598,7 @@ print_success "Vnstat"
 function ins_openvpn(){
 clear
 print_install "Menginstall OpenVPN"
-wget ${REPO}Fls/openvpn &&  chmod +x openvpn && ./openvpn
+wget ${REPO}cfgx/openvpn &&  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
 print_success "OpenVPN"
 }
@@ -651,7 +651,7 @@ sed -i '$ i\/swapfile      swap swap   defaults    0 0' /etc/fstab
 chronyd -q 'server 0.id.pool.ntp.org iburst'
 chronyc sourcestats -v
 chronyc tracking -v
-wget ${REPO}Fls/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
+wget ${REPO}cfgx/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 print_success "Swap 1 G"
 }
 function ins_Fail2ban(){
@@ -685,7 +685,7 @@ systemctl start ws
 systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-wget -O /usr/sbin/ftvpn "${REPO}Fls/ftvpn" >/dev/null 2>&1
+wget -O /usr/sbin/ftvpn "${REPO}cfgx/ftvpn" >/dev/null 2>&1
 chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
@@ -815,9 +815,9 @@ print_success "All Packet"
 function menu(){
 clear
 print_install "Memasang Menu Packet"
-wget ${REPO}Cdy/menu.zip
+wget ${REPO}menu/menu.zip
 wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/titis69/sctitis/main/seting/encrypt" ; chmod +x /usr/bin/enc
-7z x -p@denisa32 menu.zip
+7z x -p@berlian69 menu.zip
 chmod +x menu/*
 enc menu/*
 mv menu/* /usr/local/sbin
