@@ -48,7 +48,7 @@ sleep 3
 ipsaya=$(curl -sS ipv4.icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/denisa32/izin/main/ip"
+data_ip="https://raw.githubusercontent.com/titis69/permission/main/sctitis"
 checking_sc() {
   useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
   if [[ $date_list < $useexp ]]; then
@@ -108,9 +108,9 @@ echo -e "\e[32mloading...\e[0m"
 clear
 clear
 rm -f /usr/bin/user
-username=$(curl https://raw.githubusercontent.com/denisa32/izin/main/ip | grep $MYIP | awk '{print $2}')
+username=$(curl https://raw.githubusercontent.com/titis69/permission/main/sctitis | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-expx=$(curl https://raw.githubusercontent.com/denisa32/izin/main/ip | grep $MYIP | awk '{print $3}')
+expx=$(curl https://raw.githubusercontent.com/titis69/permission/main/sctitis | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
 username=$(cat /usr/bin/user)
 oid=$(cat /usr/bin/ver)
@@ -129,7 +129,7 @@ mai="datediff "$Exp" "$DATE""
 Info="(${green}Active${NC})"
 Error="(${RED}ExpiRED${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://raw.githubusercontent.com/denisa32/izin/main/ip | grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://raw.githubusercontent.com/titis69/permission/main/sctitis | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -137,7 +137,7 @@ sts="${Error}"
 fi
 echo -e "\e[32mloading...\e[0m"
 clear
-REPO="https://raw.githubusercontent.com/denisa32/sc/main/"
+REPO="https://raw.githubusercontent.com/titis69/permission/main/sctitis"
 start=$(date +%s)
 secs_to_human() {
 echo "Installation time : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's $((${1} % 60)) seconds"
@@ -768,7 +768,7 @@ clear
 }
 function noobzvpn(){
 clear
-wget --no-check-certificate https://raw.githubusercontent.com/denisa32/sc/main/noobzvpns.zip
+wget --no-check-certificate https://raw.githubusercontent.com/titis69/sctitis/main/noobzvpns.zip
 unzip noobzvpns.zip
 cd noobzvpns
 bash install.sh
@@ -814,7 +814,7 @@ function menu(){
 clear
 print_install "Memasang Menu Packet"
 wget ${REPO}Cdy/menu.zip
-wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/denisa32/sc/main/Enc/encrypt" ; chmod +x /usr/bin/enc
+wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/titis69/sctitis/main/seting/encrypt" ; chmod +x /usr/bin/enc
 7z x -p@denisa32 menu.zip
 chmod +x menu/*
 enc menu/*
