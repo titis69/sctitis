@@ -40,7 +40,7 @@ clear
 clear && clear && clear
 clear;clear;clear
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
-echo -e "\033[96;1m              WELCOME TO SCRIPT DENISA             \033[0m"
+echo -e "\033[96;1m              WELCOME TO SCRIPT BERLIAN            \033[0m"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
 sleep 3
@@ -48,7 +48,7 @@ sleep 3
 ipsaya=$(curl -sS ipv4.icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/denisa32/izin/main/ip"
+data_ip="https://raw.githubusercontent.com/titis69/permission/main/sctitis"
 checking_sc() {
   useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
   if [[ $date_list < $useexp ]]; then
@@ -108,9 +108,9 @@ echo -e "\e[32mloading...\e[0m"
 clear
 clear
 rm -f /usr/bin/user
-username=$(curl https://raw.githubusercontent.com/denisa32/izin/main/ip | grep $MYIP | awk '{print $2}')
+username=$(curl https://raw.githubusercontent.com/titis69/permission/main/sctitis | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-expx=$(curl https://raw.githubusercontent.com/denisa32/izin/main/ip | grep $MYIP | awk '{print $3}')
+expx=$(curl https://raw.githubusercontent.com/titis69/permission/main/sctitis | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
 username=$(cat /usr/bin/user)
 oid=$(cat /usr/bin/ver)
@@ -129,7 +129,7 @@ mai="datediff "$Exp" "$DATE""
 Info="(${green}Active${NC})"
 Error="(${RED}ExpiRED${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://raw.githubusercontent.com/denisa32/izin/main/ip | grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://raw.githubusercontent.com/titis69/permission/main/sctitis | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -137,7 +137,7 @@ sts="${Error}"
 fi
 echo -e "\e[32mloading...\e[0m"
 clear
-REPO="https://raw.githubusercontent.com/denisa32/sc/main/"
+REPO="https://raw.githubusercontent.com/titis69/permission/main/sctitis"
 start=$(date +%s)
 secs_to_human() {
 echo "Installation time : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's $((${1} % 60)) seconds"
@@ -289,9 +289,9 @@ echo $host1 > /root/domain
 echo "DENISA" > /etc/xray/username
 echo ""
 elif [[ $host == "2" ]]; then
-wget ${REPO}Fls/cf.sh && chmod +x cf.sh && ./cf.sh
+wget ${REPO}Fls/cfgx.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
-echo "DENISA" > /etc/xray/username
+echo "BERLIAN" > /etc/xray/username
 clear
 else
 print_install "Random Subdomain/Domain is Used"
@@ -300,8 +300,8 @@ fi
 }
 clear
 restart_system() {
-USRSC=$(wget -qO- https://raw.githubusercontent.com/denisa32/izin/main/ip | grep $ipsaya | awk '{print $2}')
-EXPSC=$(wget -qO- https://raw.githubusercontent.com/denisa32/izin/main/ip | grep $ipsaya | awk '{print $3}')
+USRSC=$(wget -qO- https://raw.githubusercontent.com/titis69/permission/main/sctitis | grep $ipsaya | awk '{print $2}')
+EXPSC=$(wget -qO- https://raw.githubusercontent.com/titis69/permission/main/sctitis | grep $ipsaya | awk '{print $3}')
 TIMEZONE=$(printf '%(%H:%M:%S)T')
 TEXT="
 <code>────────────────────</code>
@@ -315,8 +315,10 @@ TEXT="
 <code>Exp Sc : </code><code>$EXPSC</code>
 <code>────────────────────</code>
 <i>Automatic Notification from Github</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/denisastore32"},{"text":"Contack","url":"https://t.me/denisastore32"}]]}'
-curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+##############################
+#"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/denisastore32"},{"text":"Contack","url":"https://t.me/denisastore32"}]]}'
+#curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+#############################
 }
 clear
 function pasang_ssl() {
@@ -387,8 +389,8 @@ domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
 chown www-data.www-data $domainSock_dir
 #latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.1
-wget -O /etc/xray/config.json "${REPO}Cfg/config.json" >/dev/null 2>&1
-wget -O /etc/systemd/system/runn.service "${REPO}Fls/runn.service" >/dev/null 2>&1
+wget -O /etc/xray/config.json "${REPO}cfgx/config.json" >/dev/null 2>&1
+wget -O /etc/systemd/system/runn.service "${REPO}cfgx/runn.service" >/dev/null 2>&1
 domain=$(cat /etc/xray/domain)
 IPVS=$(cat /etc/xray/ipvps)
 print_success "Core Xray 1.8.1 Latest Version"
@@ -396,11 +398,11 @@ clear
 curl -s ipinfo.io/city >>/etc/xray/city
 curl -s ipinfo.io/org | cut -d " " -f 2-10 >>/etc/xray/isp
 print_install "Memasang Konfigurasi Packet"
-wget -O /etc/haproxy/haproxy.cfg "${REPO}Cfg/haproxy.cfg" >/dev/null 2>&1
-wget -O /etc/nginx/conf.d/xray.conf "${REPO}Cfg/xray.conf" >/dev/null 2>&1
+wget -O /etc/haproxy/haproxy.cfg "${REPO}cfgx/haproxy.cfg" >/dev/null 2>&1
+wget -O /etc/nginx/conf.d/xray.conf "${REPO}cfgx/xray.conf" >/dev/null 2>&1
 sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
 sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
-curl ${REPO}Cfg/nginx.conf > /etc/nginx/nginx.conf
+curl ${REPO}cfgx/nginx.conf > /etc/nginx/nginx.conf
 cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
 chmod +x /etc/systemd/system/runn.service
 rm -rf /etc/systemd/system/xray.service.d
@@ -426,7 +428,7 @@ print_success "Konfigurasi Packet"
 function ssh(){
 clear
 print_install "Memasang Password SSH"
-wget -O /etc/pam.d/common-password "${REPO}Fls/password"
+wget -O /etc/pam.d/common-password "${REPO}cfgx/password"
 chmod +x /etc/pam.d/common-password
 DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration
 debconf-set-selections <<<"keyboard-configuration keyboard-configuration/altgr select The default for the keyboard layout"
@@ -477,9 +479,9 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service limit Quota"
-wget raw.githubusercontent.com/denisa32/sc/main/Fls/limit.sh && chmod +x limit.sh && ./limit.sh
+wget raw.githubusercontent.com/titis69/sctitis/main/seting/limit.sh && chmod +x limit.sh && ./limit.sh
 cd
-wget -q -O /usr/bin/limit-ip "${REPO}Fls/limit-ip"
+wget -q -O /usr/bin/limit-ip "${REPO}cfgx/limit-ip"
 chmod +x /usr/bin/*
 cd /usr/bin
 sed -i 's/\r//' limit-ip
@@ -528,13 +530,13 @@ systemctl daemon-reload
 #systemctl restart trip
 #systemctl enable trip
 mkdir -p /usr/local/kyt/
-wget -q -O /usr/local/kyt/udp-mini "${REPO}Fls/udp-mini"
+wget -q -O /usr/local/kyt/udp-mini "${REPO}cfgx/udp-mini"
 chmod +x /usr/local/
 kyt/udp-mini
 chmod +x /usr/local/kyt/*
-wget -q -O /etc/systemd/system/udp-mini-1.service "${REPO}Fls/udp-mini-1.service"
-wget -q -O /etc/systemd/system/udp-mini-2.service "${REPO}Fls/udp-mini-2.service"
-wget -q -O /etc/systemd/system/udp-mini-3.service "${REPO}Fls/udp-mini-3.service"
+wget -q -O /etc/systemd/system/udp-mini-1.service "${REPO}cfgx/udp-mini-1.service"
+wget -q -O /etc/systemd/system/udp-mini-2.service "${REPO}cfgx/udp-mini-2.service"
+wget -q -O /etc/systemd/system/udp-mini-3.service "${REPO}cfgx/udp-mini-3.service"
 systemctl disable udp-mini-1
 systemctl stop udp-mini-1
 systemctl enable udp-mini-1
@@ -553,7 +555,7 @@ clear
 function ins_SSHD(){
 clear
 print_install "Memasang SSHD"
-wget -q -O /etc/ssh/sshd_config "${REPO}Fls/sshd" >/dev/null 2>&1
+wget -q -O /etc/ssh/sshd_config "${REPO}cfgx/sshd" >/dev/null 2>&1
 chmod 700 /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 systemctl restart ssh
@@ -565,7 +567,7 @@ function ins_dropbear(){
 clear
 print_install "Menginstall Dropbear"
 apt-get install dropbear -y > /dev/null 2>&1
-wget -q -O /etc/default/dropbear "${REPO}Cfg/dropbear.conf"
+wget -q -O /etc/default/dropbear "${REPO}cfgx/dropbear.conf"
 chmod +x /etc/default/dropbear
 /etc/init.d/dropbear restart
 /etc/init.d/dropbear status
@@ -596,7 +598,7 @@ print_success "Vnstat"
 function ins_openvpn(){
 clear
 print_install "Menginstall OpenVPN"
-wget ${REPO}Fls/openvpn &&  chmod +x openvpn && ./openvpn
+wget ${REPO}cfgx/openvpn &&  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
 print_success "OpenVPN"
 }
@@ -605,7 +607,7 @@ clear
 print_install "Memasang Backup Server"
 apt install rclone -y
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "${REPO}Cfg/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "${REPO}cfgx/rclone.conf"
 cd /bin
 git clone  https://github.com/magnific0/wondershaper.git
 cd wondershaper
@@ -629,7 +631,7 @@ password 19191919marlina
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
-wget -q -O /etc/ipserver "${REPO}Fls/ipserver" && bash /etc/ipserver
+wget -q -O /etc/ipserver "${REPO}cfgx/ipserver" && bash /etc/ipserver
 print_success "Backup Server"
 }
 clear
@@ -649,7 +651,7 @@ sed -i '$ i\/swapfile      swap swap   defaults    0 0' /etc/fstab
 chronyd -q 'server 0.id.pool.ntp.org iburst'
 chronyc sourcestats -v
 chronyc tracking -v
-wget ${REPO}Fls/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
+wget ${REPO}cfgx/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 print_success "Swap 1 G"
 }
 function ins_Fail2ban(){
@@ -664,15 +666,15 @@ fi
 clear
 echo "Banner /etc/banner.txt" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/banner.txt"@g' /etc/default/dropbear
-wget -O /etc/banner.txt "${REPO}Bnr/issue.net"
+wget -O /etc/banner.txt "${REPO}cfgx/issue.net"
 print_success "Fail2ban"
 }
 function ins_epro(){
 clear
 print_install "Menginstall ePro WebSocket Proxy"
-wget -O /usr/bin/ws "${REPO}Fls/ws" >/dev/null 2>&1
-wget -O /usr/bin/tun.conf "${REPO}Cfg/tun.conf" >/dev/null 2>&1
-wget -O /etc/systemd/system/ws.service "${REPO}Fls/ws.service" >/dev/null 2>&1
+wget -O /usr/bin/ws "${REPO}cfgx/ws" >/dev/null 2>&1
+wget -O /usr/bin/tun.conf "${REPO}cfgx/tun.conf" >/dev/null 2>&1
+wget -O /etc/systemd/system/ws.service "${REPO}cfgx/ws.service" >/dev/null 2>&1
 chmod +x /etc/systemd/system/ws.service
 chmod +x /usr/bin/ws
 chmod 644 /usr/bin/tun.conf
@@ -683,7 +685,7 @@ systemctl start ws
 systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-wget -O /usr/sbin/ftvpn "${REPO}Fls/ftvpn" >/dev/null 2>&1
+wget -O /usr/sbin/ftvpn "${REPO}cfgx/ftvpn" >/dev/null 2>&1
 chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
@@ -768,7 +770,7 @@ clear
 }
 function noobzvpn(){
 clear
-wget --no-check-certificate https://raw.githubusercontent.com/denisa32/sc/main/noobzvpns.zip
+wget --no-check-certificate https://raw.githubusercontent.com/titis69/sctitis/main/noobzvpns.zip
 unzip noobzvpns.zip
 cd noobzvpns
 bash install.sh
@@ -813,9 +815,9 @@ print_success "All Packet"
 function menu(){
 clear
 print_install "Memasang Menu Packet"
-wget ${REPO}Cdy/menu.zip
-wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/denisa32/sc/main/Enc/encrypt" ; chmod +x /usr/bin/enc
-7z x -p@denisa32 menu.zip
+wget ${REPO}menu/menu.zip
+wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/titis69/sctitis/main/seting/encrypt" ; chmod +x /usr/bin/enc
+7z x -p@berlian69 menu.zip
 chmod +x menu/*
 enc menu/*
 mv menu/* /usr/local/sbin
