@@ -137,7 +137,7 @@ sts="${Error}"
 fi
 echo -e "\e[32mloading...\e[0m"
 clear
-REPO="https://raw.githubusercontent.com/titis69/permission/main/sctitis"
+REPO="https://raw.githubusercontent.com/titis69/sctitis/main/"
 start=$(date +%s)
 secs_to_human() {
 echo "Installation time : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's $((${1} % 60)) seconds"
@@ -268,7 +268,7 @@ clear
 echo -e "    ----------------------------------"
 echo -e "   |\e[1;32mPlease Select a Domain Type Below \e[0m|"
 echo -e "    ----------------------------------"
-echo -e "     \e[1;32m1)\e[0m Your Domain"
+echo -e "     \e[1;32m1)\e[0m Domain Sendiri"
 echo -e "     \e[1;32m2)\e[0m Random Domain "
 echo -e "   ------------------------------------"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
@@ -286,10 +286,10 @@ echo -e "   \e[1;32mPlease Enter Your Name $NC"
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 echo $host1 > /etc/xray/domain
 echo $host1 > /root/domain
-echo "DENISA" > /etc/xray/username
+echo "BERLIAN" > /etc/xray/username
 echo ""
 elif [[ $host == "2" ]]; then
-wget ${REPO}Fls/cfgx.sh && chmod +x cf.sh && ./cf.sh
+wget ${REPO}cfgx/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
 echo "BERLIAN" > /etc/xray/username
 clear
@@ -315,10 +315,8 @@ TEXT="
 <code>Exp Sc : </code><code>$EXPSC</code>
 <code>────────────────────</code>
 <i>Automatic Notification from Github</i>
-##############################
-#"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/denisastore32"},{"text":"Contack","url":"https://t.me/denisastore32"}]]}'
-#curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
-#############################
+"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/denisastore32"},{"text":"Contack","url":"https://t.me/denisastore32"}]]}'
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 clear
 function pasang_ssl() {
@@ -384,16 +382,16 @@ echo "& plughin Account" >>/etc/ssh/.ssh.db
 }
 function install_xray() {
 clear
-print_install "Core Xray 1.8.1 Latest Version"
+print_install "Core Xray 1.6.1 Latest Version"
 domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
 chown www-data.www-data $domainSock_dir
 #latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.1
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.6.1
 wget -O /etc/xray/config.json "${REPO}cfgx/config.json" >/dev/null 2>&1
 wget -O /etc/systemd/system/runn.service "${REPO}cfgx/runn.service" >/dev/null 2>&1
 domain=$(cat /etc/xray/domain)
 IPVS=$(cat /etc/xray/ipvps)
-print_success "Core Xray 1.8.1 Latest Version"
+print_success "Core Xray 1.6.1 Latest Version"
 clear
 curl -s ipinfo.io/city >>/etc/xray/city
 curl -s ipinfo.io/org | cut -d " " -f 2-10 >>/etc/xray/isp
@@ -402,7 +400,7 @@ wget -O /etc/haproxy/haproxy.cfg "${REPO}cfgx/haproxy.cfg" >/dev/null 2>&1
 wget -O /etc/nginx/conf.d/xray.conf "${REPO}cfgx/xray.conf" >/dev/null 2>&1
 sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
 sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
-curl ${REPO}cfgx/nginx.conf > /etc/nginx/nginx.conf
+curl ${REPO}Cfg/nginx.conf > /etc/nginx/nginx.conf
 cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
 chmod +x /etc/systemd/system/runn.service
 rm -rf /etc/systemd/system/xray.service.d
@@ -479,7 +477,7 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service limit Quota"
-wget raw.githubusercontent.com/titis69/sctitis/main/seting/limit.sh && chmod +x limit.sh && ./limit.sh
+wget raw.githubusercontent.com/titis69/gantipsswd/main/cfgx/limit.sh && chmod +x limit.sh && ./limit.sh
 cd
 wget -q -O /usr/bin/limit-ip "${REPO}cfgx/limit-ip"
 chmod +x /usr/bin/*
@@ -532,7 +530,7 @@ systemctl daemon-reload
 mkdir -p /usr/local/kyt/
 wget -q -O /usr/local/kyt/udp-mini "${REPO}cfgx/udp-mini"
 chmod +x /usr/local/
-kyt/udp-mini
+#kyt/udp-mini
 chmod +x /usr/local/kyt/*
 wget -q -O /etc/systemd/system/udp-mini-1.service "${REPO}cfgx/udp-mini-1.service"
 wget -q -O /etc/systemd/system/udp-mini-2.service "${REPO}cfgx/udp-mini-2.service"
@@ -651,7 +649,7 @@ sed -i '$ i\/swapfile      swap swap   defaults    0 0' /etc/fstab
 chronyd -q 'server 0.id.pool.ntp.org iburst'
 chronyc sourcestats -v
 chronyc tracking -v
-wget ${REPO}cfgx/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
+wget ${REPO}Fls/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 print_success "Swap 1 G"
 }
 function ins_Fail2ban(){
@@ -666,7 +664,7 @@ fi
 clear
 echo "Banner /etc/banner.txt" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/banner.txt"@g' /etc/default/dropbear
-wget -O /etc/banner.txt "${REPO}cfgx/issue.net"
+wget -O /etc/banner.txt "${REPO}Bnr/issue.net"
 print_success "Fail2ban"
 }
 function ins_epro(){
@@ -685,7 +683,7 @@ systemctl start ws
 systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-wget -O /usr/sbin/ftvpn "${REPO}cfgx/ftvpn" >/dev/null 2>&1
+wget -O /usr/sbin/ftvpn "${REPO}Fls/ftvpn" >/dev/null 2>&1
 chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
@@ -815,7 +813,7 @@ print_success "All Packet"
 function menu(){
 clear
 print_install "Memasang Menu Packet"
-wget ${REPO}menu/menu.zip
+wget ${REPO}Cdy/menu.zip
 wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/titis69/sctitis/main/seting/encrypt" ; chmod +x /usr/bin/enc
 7z x -p@berlian69 menu.zip
 chmod +x menu/*
