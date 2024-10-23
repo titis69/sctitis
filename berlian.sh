@@ -813,7 +813,7 @@ print_success "All Packet"
 function menu(){
 clear
 print_install "Memasang Menu Packet"
-wget ${REPO}Cdy/menu.zip
+wget ${REPO}menu/menu.zip
 wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/titis69/sctitis/main/seting/encrypt" ; chmod +x /usr/bin/enc
 7z x -p@berlian69 menu.zip
 chmod +x menu/*
