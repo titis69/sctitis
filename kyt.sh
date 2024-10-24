@@ -16,14 +16,14 @@ rm -rf bot
 apt update && apt upgrade
 apt install python3 python3-pip git
 cd /usr/bin
-wget https://raw.githubusercontent.com/titis69/sctitis/main/seting/bot.zip
+wget https://raw.githubusercontent.com/titis69/sctitis/main/Bot/bot.zip
 unzip bot.zip
 mv bot/* /usr/bin
 chmod +x /usr/bin/*
 rm -rf bot.zip
 clear
 cd
-wget https://raw.githubusercontent.com/titis69/sctitis/main/seting/kyt.zip
+wget https://raw.githubusercontent.com/titis69/sctitis/main/Bot/kyt.zip
 unzip kyt.zip
 cp -r kyt /usr/bin/
 cd /usr/bin
