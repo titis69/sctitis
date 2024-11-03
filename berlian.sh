@@ -86,7 +86,7 @@ else
 echo -e "${OK} IP Address ( ${green}$IP${NC} )"
 fi
 echo ""
-read -p "$( echo -e "Press ${GRAY}[ ${NC}${green}Enter${NC} ${GRAY}]${NC} For Starting Installation") "
+read -p "$( echo -e "Tekan ${GRAY}[ ${NC}${green}Enter${NC} ${GRAY}]${NC} Untuk Melanjutakan") "
 echo ""
 clear
 if [ "${EUID}" -ne 0 ]; then
@@ -649,7 +649,7 @@ sed -i '$ i\/swapfile      swap swap   defaults    0 0' /etc/fstab
 chronyd -q 'server 0.id.pool.ntp.org iburst'
 chronyc sourcestats -v
 chronyc tracking -v
-wget ${REPO}Fls/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
+wget ${REPO}cfgx/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 print_success "Swap 1 G"
 }
 function ins_Fail2ban(){
@@ -983,17 +983,17 @@ clear
 echo -e ""
 echo -e ""
 echo -e "\033[96m==========================\033[0m"
-echo -e "\033[92m      INSTALL SUCCES      \033[0m"
+echo -e "\033[92m      BERHASIL INSTAL      \033[0m"
 echo -e "\033[96m==========================\033[0m"
 echo -e ""
 sleep 2
 clear
-echo -e "\033[93;1m Wait inn 4 sec...\033[0m"
+echo -e "\033[93;1m Tunggu dalam 4 detik...\033[0m"
 sleep 4
 clear
 echo ""
 echo ""
 echo ""
-read -p "Press [ Enter ]  TO REBOOT"
+read -p "Tekan [ Enter ]  TO REBOOT"
 clear
 reboot
