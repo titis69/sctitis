@@ -2,4 +2,4 @@ REPO="https://raw.githubusercontent.com/titis69/sctitis/main/"
 
 
 
-wget -O /root/.config/rclone/rclone.conf "${REPO}Cfg/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "${REPO}cfgx/rclone.conf"
