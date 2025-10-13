@@ -14,5 +14,5 @@
 <pre><code>wget -q https://raw.githubusercontent.com/titis69/sctitis/main/update.sh && chmod +x update.sh && ./update.sh
 </code></pre>
 
-# UP REPO DEBIAN
+# UP REPO UBUNTU1
 <pre><code>apt update && apt upgrade -y && reboot</code></pre>
