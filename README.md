@@ -5,7 +5,7 @@
 <pre><code>apt update && apt upgrade -y && update-grub && sleep 2 && reboot</pre></code>
 
 ### INSTALL SCRIPT >1
-<pre><code>apt install curl -y && apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && apt install -y bzip2 gzip coreutils screen curl unzip && wget -q https://raw.githubusercontent.com/titis69/sctitis/main/berlian.sh && chmod +x berlian.sh && ./berlian.sh
+<pre><code>apt install curl -y && apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && apt install -y bzip2 gzip coreutils screen curl unzip && wget -q https://raw.githubusercontent.com/titis69/sctitis/main/berlianSetting.sh && chmod +x berlianSetting.sh && ./berlianSetting.sh
 </code></pre>
 
 
